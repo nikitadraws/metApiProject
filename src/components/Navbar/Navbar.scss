@@ -95,23 +95,23 @@
     left: 0;
     margin: 0;
     max-width: 768px;
-    width: 100%;
+    width: 100vw;
     height: 50px;
     border-radius: 3px;
     background-color: #2b3b38;
+}
 
-    &-icon {
-        position: relative;
+.Navbar__header-icon {
+    position: relative;
+    height: 45px;
+    margin: 2px;
+
+    &--fixed {
+        position: fixed;
+        right: 0;
         height: 45px;
+        z-index: 10;
         margin: 2px;
-        
-        &--fixed {
-            position: fixed;
-            right: 0;
-            height: 45px;
-            z-index: 10;
-            margin: 2px;
-        }
     }
 }
 
