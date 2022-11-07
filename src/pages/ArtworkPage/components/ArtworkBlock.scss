@@ -1,0 +1,93 @@
+@use "../../../scss/_mixins.scss" as *;
+@use "../../../scss/_variables.scss" as *;
+
+.ArtworkBlock {
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+
+    @include filter-checkbox;   
+
+    &__image-container {
+        width: 30%;
+
+        &:hover {
+            cursor: zoom-in;
+        }
+
+        &--fullscreen {
+            width: 500px;
+            height: auto;
+            margin: auto;
+            
+            &:hover {
+                cursor: zoom-out;
+            }
+        }
+    }
+ 
+    &__image {
+        object-fit: contain;
+        width: 90%;
+        height: 90%;
+    }
+    
+    &__description {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin: auto;
+        text-align: left;
+
+        &--fullscreen {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-style: italic;
+        text-decoration: underline;
+        margin-left: 0;
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+    &__link:hover {
+        color: $link-hover-color;
+    }
+
+    
+}
+
+@media only screen and (max-width: 767px) {
+
+    .ArtworkBlock {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__image-container {
+            width: 50%;
+            
+            &--fullscreen {
+                width: 300px;
+            }
+        }
+
+        &__link {
+            font-size: 11px;
+        }
+    }
+}
+
+@media only screen and (max-width: 424px) {
+ 
+    .ArtworkBlock {
+        &__link {
+            font-size: 8px;
+        }
+    }
+}

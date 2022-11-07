@@ -1,0 +1,46 @@
+@use "../../../scss/_variables.scss" as *;
+@use "../../../scss/_mixins.scss" as *;
+
+.SortFields {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-wrap: wrap;
+
+    &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: underline dotted;
+    margin: 5px;
+
+        &:hover {
+            color: $text-second-color;
+            cursor: pointer;
+        }
+    }
+    
+    &__icon {
+        width: 16px;
+        height: 16px;
+        transform: rotate(var(--arrow-direction));
+        margin: 0 auto 0 0;
+    }
+
+    &__title {
+        @include filter-toggle;
+    }
+}
+
+
+
+@media only screen and (max-width: 1023px) {
+
+
+    .SortFields{
+        width: 160px;
+        margin: auto
+    }
+
+}

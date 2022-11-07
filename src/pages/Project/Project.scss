@@ -1,0 +1,42 @@
+@use "../../scss/_variables.scss" as *;
+
+.Project {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    background-color: $about-project-background-color;
+    padding: 20px;
+    border-radius: 20px;
+
+    &__language {
+        display: inline-block;
+        margin: 10px 5px;
+        text-decoration: underline;
+        font-size: 20px;
+
+        &:hover {
+            cursor: pointer;
+            color: $text-second-color 
+        }
+    }
+        
+    &__description {
+        max-width: 600px;
+        margin: 15px auto 25px auto;
+        text-align: justify;
+        display: block;    
+    }
+    
+    &__stroke {
+        margin: 20px 5px;
+        text-align: justify;
+        display: flex; 
+    }
+
+    &__span {
+        font-style: italic;
+        margin: 0 5px;
+        display: inline-block;
+        min-width: 110px;
+    }
+}

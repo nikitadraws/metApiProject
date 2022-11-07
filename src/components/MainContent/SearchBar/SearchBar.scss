@@ -1,0 +1,143 @@
+@use "../../../scss/_variables.scss" as *;
+
+.SearchBar{
+    position: relative;
+    margin: 0 auto;
+    width: 600px;
+
+    &__list-container {
+        position: absolute;
+        left: 7.5px;
+        margin: 0;
+    }
+
+    &__list {
+        position: absolute;
+        z-index: 10;
+        background-color: $input-background-color;
+        width: 450px;
+        margin: 0;
+        border-left: 2px solid $input-border-color;
+        border-right: 2px solid $input-border-color;
+        border-bottom: 2px solid $input-border-color;
+        border-radius: 0 0;
+        text-align: left;
+        box-shadow: 12px 15px 7px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 5px;
+        width: 100%;
+        border-top: 1px solid $input-border-color;
+        border-radius: 0;
+
+        &:hover {
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.4);
+            background-color: #1a2a27;
+            font-size: 17px;
+            color: $text-light-color;
+        } 
+    }
+
+ 
+    &__input {
+        width: 450px;
+        height: 40px;
+        margin-bottom: -5px;
+        margin-right: 140px;
+        padding: 8px 30px 8px 35px;
+        font-size: 16px;
+        background-color: $input-background-color;
+        border: 1px solid $input-border-color;
+      
+        &:hover {
+            border: 2px solid $input-border-color;
+    
+        }
+    
+        &:focus {
+            outline-offset: -2px;
+            outline-width: 2px;
+            outline-color: $input-focus-color;
+            outline-style: solid;
+        }
+
+        &:focus + .SearchBar__magnifier-icon {
+            opacity: 0.7;
+        }   
+    }
+       
+    &__artwork-icon {
+        width: 25px;
+        margin: 0 5px 0 0;
+    }
+             
+    &__cross-icon {
+        position: absolute;
+        left: 422px;
+        top: 8px;
+        width: 25px;
+        opacity: 0.7;
+        
+        &:hover {
+            cursor: pointer;
+            width: 28px;
+            left: 421px;
+            top: 7px;
+        }
+    }
+        
+    &__magnifier-icon {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 20px;
+        opacity: 0.3;
+    }
+}
+
+
+  @media only screen and (max-width: 767px) {
+
+    .SearchBar{
+        width: 300px;
+
+        &__list-container {
+            left: 10px;
+            top: 47px;
+        }
+
+        &__list {
+            box-shadow: 0 10px 5px 5px rgba(0, 0, 0, 0.4);
+            width: 280px;
+        }
+
+        &__input {
+            width: 280px;
+            margin: 10px auto 0 auto;
+        }
+
+        &__cross-icon {
+            left: 255px;
+            top: 13px;
+            width: 28px;
+                   
+            &:hover {
+                left: 255px;
+                top: 13px;
+                width: 28px;
+            }
+        }
+
+        &__magnifier-icon {
+            left: 13px;
+            top: 13px;
+            width: 26px;
+        }
+    }
+}

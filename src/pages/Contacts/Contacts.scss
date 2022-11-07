@@ -1,0 +1,83 @@
+@use "../../scss/_variables.scss" as *;
+
+.Contacts-card + .Contacts-card {
+    margin-top: 60px;
+}
+
+.Contacts-card {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 30px auto;
+    max-width: 800px;
+    text-align: left;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        width: 500px
+    }
+
+    &__img {
+        margin-top: 40px;
+        width: 300px;
+        height: 100%;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__headline {
+        margin: 15px 0 0 20px
+    }
+ 
+    &__text,
+    &__link {
+        margin: 10px auto 0 20px;
+    }
+
+    &__link:hover {
+        color: $link-hover-color;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+.Contacts-card + .Contacts-card {
+        margin-top: 0px;
+    }
+
+    .Contacts-card {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+
+
+        &____description {
+            margin-top: 20px;
+        }
+
+
+        &__img {
+            width: 350px;
+            height: auto
+        }
+
+        &__title {
+            font-size: 25px;
+        }
+    }
+}
+
+ @media only screen and (max-width: 424px) {
+
+     .Contacts-card {
+
+        &__img {
+            width: 250px;
+
+        }
+    }
+}

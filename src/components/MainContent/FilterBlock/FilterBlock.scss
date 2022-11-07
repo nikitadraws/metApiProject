@@ -1,0 +1,12 @@
+.FilterBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 767px) {
+
+    .FilterBlock{
+        margin: 0 0 0 auto;
+        min-width: 160px;
+    }
+}

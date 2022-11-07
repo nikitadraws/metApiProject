@@ -1,0 +1,32 @@
+@use "../../scss/_variables.scss" as *;
+
+.Footer {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 0 -30px 0;
+    height: 60px;
+    width: 100%;
+    background-color: $background-dark-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0;
+
+    &__text {
+        display: block;
+    }
+
+    &__link,
+    &__text {
+        color: $footer-text-color;
+        margin: 10px
+    }
+
+    &__link:hover {
+        color: $footer-link-hover-color;
+    }
+}

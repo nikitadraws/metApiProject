@@ -1,0 +1,123 @@
+@use "./_variables.scss" as *;
+
+@mixin filter-toggle() {
+
+    cursor: pointer;
+    font-size: 20px;
+    margin: 5px auto 5px 45px;
+    position: relative;
+
+    &:hover {
+        color: $text-second-color;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: -15px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 5px 0 5px;
+        border-color: #ffffff transparent transparent transparent;
+        transition: all 0.2s ease;
+    }
+
+    &:hover::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        right: 52px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-color: transparent transparent transparent #ffffff;
+    }
+
+
+    @media only screen and (max-width: 1023px) {
+
+     &{
+        margin: 5px auto 5px 60px;
+    }
+ }
+
+    @media only screen and (max-width: 767px) {
+        & {
+            margin: 5px auto;
+        }
+    }
+}
+
+@mixin auth-form() {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    max-width: 500px;
+    max-height: 600px;
+    border: 1px solid;
+    border-color: $border-main-color;
+    border-radius: 20px;
+}
+
+@mixin auth-input() {
+    height: 40px;
+    width: 50%;
+    padding: 8px;
+    font-size: 16px;
+    background-color: $input-background-color;
+    border: 1px solid;
+    border-color: $input-border-color; 
+}
+
+@mixin filter-checkbox() {
+    &__filter-checkbox {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__filter-label {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0;
+
+        &:hover {
+            cursor: pointer;     
+        }
+    }
+
+    &__filter-label:hover &__filter-icon-box {
+        border: 3px solid;
+        border-color: $border-main-color;
+    }
+
+    &__filter-icon {
+        margin: 0;
+        width: 80%;
+        height: 110%;
+    }
+
+    &__filter-icon-box {
+        height: 20px;
+        width: 20px;
+        border: 2px solid;
+        border-color: $border-main-color;
+    }
+
+ 
+    @media only screen and (max-width: 1023px) {
+
+        &__filter-checkbox {
+            width: 140px;
+        }
+    }
+
+}
+

@@ -1,0 +1,32 @@
+@use "../../scss/_variables.scss" as *;
+
+.Museum-box {
+    text-align: justify;
+    margin: 40px auto;
+    padding: 0 10px;
+    max-width: 600px;
+
+    &__headline {
+        text-align: center;
+    }
+
+    &__text {
+        margin: 30px;
+    }
+
+    &__link {
+        margin: 2px;
+    }
+
+    &__link:hover {
+        color: $link-hover-color;
+    }
+
+}
+
+.Museum-box__image {
+    display: block;
+    width: 60%;
+    max-width: 300px;
+    margin: 20px auto;
+}

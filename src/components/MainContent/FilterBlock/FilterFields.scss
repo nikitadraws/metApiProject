@@ -1,0 +1,167 @@
+@use "../../../scss/_variables.scss" as *;
+@use "../../../scss/_mixins.scss" as *;
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type=range] {
+    -webkit-appearance: none
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none
+}
+
+label+input {
+    display: none;
+}
+
+.FilterFields {
+
+    @include filter-checkbox;
+
+    &__title {
+        @include filter-toggle;
+    }
+    
+    &__text {
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    &__slider {
+        position: relative;
+        height: 120px;
+    }
+
+    &__slider-left {
+        position: absolute;
+        left: 0;
+        top: 10px;
+    }
+    
+    &__slider-right {
+        position: absolute;
+        left: 9px;
+        top: 10px;
+    }
+
+    &__slider-input {
+        margin: 0;
+        pointer-events: none;
+        position: relative;
+        z-index: 2;
+        width: 140px;
+        background: transparent;
+        appearance: none;
+        
+        &:focus {
+            outline: none;
+        }
+        
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            box-shadow: none;
+            background: $input-range-color;
+            border-radius: 0px;
+            border: 0px solid #010101;
+        }
+        
+        &::-moz-range-track {
+            position: relative;
+            z-index: 3;
+            top: 20px;
+            width: 100%;
+            height: 1px;
+            cursor: pointer;
+            box-shadow: none;
+            background: $input-range-color;
+            border-radius: 0px;
+            border: 0px solid #010101;
+        }
+        
+        &::-webkit-slider-thumb {
+            pointer-events: auto;
+            box-shadow: none;
+            border: 0px solid $input-range-color;
+            box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
+            height: 26px;
+            width: 9px;
+            border-radius: 12px;
+            background: $input-range-color;
+            cursor: pointer;
+            appearance: none;
+            margin-top: -12px;
+        }
+        
+        &::-moz-range-thumb {
+            pointer-events: auto;
+            box-shadow: none;
+            border: 0px solid $input-range-color;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+            height: 20px;
+            width: 10px;
+            border-radius: 12px;
+            background: $input-range-color;
+            cursor: pointer;
+            margin-top: -12px;
+        }
+        
+        &::-moz-focus-outer {
+            border: 0;
+        }
+    }
+
+    &__year-right {
+        position: absolute;
+        bottom: 18px;
+        right: calc(var(--right) * 1px)
+    }
+    
+    &__year-left {
+        position: absolute;
+        top: 25px;
+        left: calc(var(--left) * 1px)
+    }
+
+    &__button {
+        all: unset;
+        cursor: pointer;
+        border-radius: 6px;
+        border: 1px solid $border-main-color;
+        padding: 1px 8px;
+        margin-top: 85px;
+        margin-right: 90px;
+        
+        &:hover {
+            color: $text-second-color;
+        }
+    }
+ }
+
+
+@media only screen and (max-width: 1023px) {
+
+    .FilterFields {
+    
+        &__text {
+            text-align: center;
+            
+        }   
+        
+        &__slider {
+            margin: auto;
+        }
+
+        &__filter-checkbox {
+            margin:auto
+        }
+    }
+}

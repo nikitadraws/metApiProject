@@ -1,0 +1,80 @@
+@use "../../../scss/_variables.scss" as *;
+
+.ViewBlock {
+    max-width: 600px;
+    margin-left: auto;
+    position: relative;
+
+    &__container {
+        position: absolute;
+        right: 130px;
+        bottom: -5px;
+        width: 75px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        margin: auto
+    }
+
+    &__image {
+        width: 85%;
+        height: 85%;
+        margin: 5px;
+        
+        &:hover {
+            margin: 3px;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+
+    &__text-box {
+        margin: auto 60px;
+        position: absolute;
+        right: -20px;
+        bottom: 0px
+    }
+
+    &__text {
+        cursor: pointer;
+        text-decoration: underline;
+
+        &:hover {
+            color: $text-second-color;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .ViewBlock {
+        max-width: 150px;
+        margin: 35px auto;
+
+        &__.container {
+            position: static;
+            margin: auto;
+        
+        }
+
+        &__text-box {
+            margin: auto 60px;
+            right: -110px;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1023px) {
+
+    .ViewBlock {
+        max-width: 800px;
+        margin: auto;
+
+        &__text-box {
+            right: -110px;
+        }
+    }
+}

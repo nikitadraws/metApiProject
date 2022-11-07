@@ -1,0 +1,42 @@
+@use "../../../scss/_mixins.scss" as *;
+@use "../../../scss/_variables.scss" as *;
+
+.LoginForm {
+    @include auth-form;
+
+    &__input {
+        @include auth-input;
+    }
+
+    &__input:hover {
+        border: 2px solid;
+        border-color: $border-main-color;
+    }
+
+     &__input:focus {
+        outline-offset: -2px;
+        outline-width: 2px;
+        outline-color: $input-focus-color;
+        outline-style: solid
+    }
+
+    &__text {
+        margin-top: 25px;
+    }
+
+    &__text--error {
+        position: absolute;
+        bottom: 125px;
+        color: $text-second-color
+    }
+
+    &__link {
+        margin-top: 10px;
+    }
+
+    &__link:hover {
+        color: $text-second-color
+    }
+}
+
+

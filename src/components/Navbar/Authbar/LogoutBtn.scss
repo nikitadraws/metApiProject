@@ -1,0 +1,23 @@
+@use "../../../scss/_variables.scss" as *;
+
+.LogoutBtn {
+    all: unset;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: $border-main-color;
+    padding: 8px;
+
+    &:hover {
+        color: red;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .LogoutBtn {
+        font-size: 40px;
+        padding: 8px 15px;
+    }
+
+}

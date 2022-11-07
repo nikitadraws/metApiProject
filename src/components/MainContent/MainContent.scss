@@ -1,0 +1,39 @@
+@use "../../scss/_variables.scss" as *;
+
+.MainContent {
+  
+    &__link { 
+        text-decoration: underline;
+        
+        &:hover {
+        cursor: pointer;
+            color: $link-hover-color;
+        }   
+    }
+}
+
+
+@media only screen and (min-width: 1023px) {
+
+    .MainContent {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 15px;
+
+        &__loading-container {
+            margin-left: 185px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .MainContent {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+ 

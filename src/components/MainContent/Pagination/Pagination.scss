@@ -1,0 +1,45 @@
+@use "../../../scss/_variables.scss" as *;
+
+.Pagination {
+    margin-left: 160px;
+    margin-top: 20px;
+    
+    &__item {
+        font-size: 18px;
+        padding: 7px;
+        margin: 0;
+
+        &:hover {
+            color: red;
+            cursor: pointer;
+            background-color: $pagintaion-hover-hover;
+            border-radius: 12px;
+        }
+    }
+
+    &__item-current {
+        color: black;
+        background-color: $pagintaion-page-color;
+        padding: 5px;
+        border-radius: 12px;
+    }
+
+    &__arrow {
+        width: 16px;
+        height: 16px;
+        margin: -2px;
+        cursor: pointer;
+
+        &--left {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1023px) {
+
+    .Pagination {
+        margin: 15px auto;
+    }
+}

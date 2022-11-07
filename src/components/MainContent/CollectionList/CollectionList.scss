@@ -1,0 +1,166 @@
+@use "../../../scss/_variables.scss" as *;
+
+$max-columns: 5;
+$gap-size: 10;
+$break-point: calc(var(--column-width) * $max-columns + $gap-size * ($max-columns - 1) * 1px);
+
+.CollectionList {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc((var(--column-width))* 1px), 1fr));
+    grid-gap: $gap-size * 1px;
+    list-style-type: none;
+    margin: 0 auto 0 auto;
+
+    &__item-list {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        width: 100%;
+        border-bottom: 2px solid $list-item-border-bottom;
+        border-radius: 0;
+        margin-bottom: 5px;
+    }
+
+    &__item-tile {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        height: 130px;
+    }
+
+    &__container-div {
+        position: relative;
+        margin: auto;
+        z-index: -2;
+    }
+
+    &__image-container {
+        line-height: 0;
+        position: relative;
+        z-index: -1;
+        transition: all 120ms linear;
+    
+        &:hover {
+            transform: scale(1.08);
+            box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &__image {
+        object-fit: contain;
+        max-width: 120px;
+        max-height: 120px;
+        cursor: pointer;
+        margin: auto;
+    }
+
+    &__favorite-icon {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        width: 20px;
+        height: 20px;
+        margin: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__tooltip-user {
+        display: none;
+    }
+
+    &__tooltip-guest {
+        display: none;
+    }
+
+    &__item-description {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item-text {
+        margin-left: 15px;
+
+        &--italic {
+            font-weight: 600;
+            margin-right: 20px;
+            font-style: italic;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1023px) {
+
+    .CollectionList {
+        margin: 0 auto 0 30px;
+        width: 90%;
+
+        &__tooltip-guest {
+            display: block;
+
+            &::before {
+                content: "Please, login or sign up to add favorites";
+                position: absolute;
+                display: none;
+                font-size: 14px;
+                right: 0;
+                bottom: -10px;
+                width: 240px;
+                transition: all 0.15s ease;
+            }
+        }
+
+        &__favorite-icon:hover+.CollectionList__tooltip-guest::before {
+            display: inline;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .CollectionList {
+        margin: auto;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(calc((var(--column-width-tablet))* 1px), 1fr));
+        padding: 0;
+
+        &__item-list {
+            display: grid;
+            opacity: 0;
+            margin: auto;
+        }
+ 
+        &__item-text {
+            margin-left: 5px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 424px) {
+
+    .CollectionList {
+        &__item-list {
+            width: 90%;
+            margin: 0;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 374px) {
+    
+    .CollectionList {
+        &__item-list {
+            width: 290px;
+            grid-template-columns: 120px 1fr;
+            margin: 0;
+        }
+    } 
+}
