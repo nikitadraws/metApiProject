@@ -80,7 +80,7 @@
     }
 
     .Navbar__navlink, .Authbar__Navlink {
-        font-size: 40px;
+        font-size: 30px;
         display: block;
         margin: 0 -20px;
         padding: 10px 0;
@@ -104,14 +104,14 @@
 .Navbar__header-icon {
     position: relative;
     height: 45px;
-    margin: 2px;
+    margin: 2px 8px 2px 2px;
 
     &--fixed {
         position: fixed;
         right: 0;
         height: 45px;
         z-index: 10;
-        margin: 2px;
+        margin: 2px 8px 2px 2px;
     }
 }
 
