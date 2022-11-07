@@ -48,7 +48,7 @@ export function Navbar() {
               setBurger(false);
               navigate("/", { replace: false });
             }}
-            className="icon-header"
+            className="Navbar__icon-logo"
             src={require("icons/met-logo.png")}
           />
 
