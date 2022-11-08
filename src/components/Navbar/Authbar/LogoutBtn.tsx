@@ -12,9 +12,6 @@ export function LogoutBtn() {
   async function handleLogout() {
     try {
       setLoading(true);
-      if (!logout) {
-        return;
-      }
       await logout(auth);
       navigate("/", { replace: false });
     } catch (err) {

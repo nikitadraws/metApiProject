@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "contexts/AuthContext";
 import { Loading } from "components/Loading/Loading";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import { About } from "pages/About/About";
 import { Slider } from "components/Slider/Slider";
 import { RootState } from "store";
@@ -15,7 +15,7 @@ export function Navbar() {
   const { currentUser } = useAuth();
   const [dropdownToggle, setDropdownToggle] = useState(false);
   const [mobileDevise, setMobileDevice] = useState(false);
-  const apiData = useSelector((state: RootState) => state.data);
+  const apiData = useSelector((state: RootState) => state.data, shallowEqual);
   const [burger, setBurger] = useState(true);
   const navigate = useNavigate();
 

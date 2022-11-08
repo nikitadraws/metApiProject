@@ -6,7 +6,6 @@ import { AuthContext } from "contexts/AuthContext";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { User } from "firebase/auth";
 import { Login } from "pages/Login/Login";
-import { Home } from "pages/Home/Home";
 import { Provider } from "react-redux";
 
 it("should render loading state while user is undefined", () => {
@@ -133,7 +132,7 @@ it("should render (navigate to) home page when user is defined, while trying to 
                 </PrivateRoute>
               }
             />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<div className="home"></div>} />
           </Routes>
         </MemoryRouter>
       </AuthContext.Provider>
@@ -141,6 +140,6 @@ it("should render (navigate to) home page when user is defined, while trying to 
   );
 
   expect(container).toContainElement(
-    container.querySelector("[class='Home-container']")
+    container.querySelector("[class='home']")
   );
 });
