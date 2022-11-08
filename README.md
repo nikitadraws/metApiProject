@@ -1,3 +1,28 @@
+## О проекте:
+Проект сделан на основе api Метрополитен-музея (Нью-Йорк). С сервера приходит ~3500 объектов. Запрос делается через RTK Query, после чего дата во время сессии хранится в store. Для авторизации пользователя используется Firebase и реакт контекст. Все кастомное кроме анимации.
+
+## Язык:
+Typescript
+
+## Библиотеки:
+React (все на функциональных компонентах), Redux, Redux Toolkit (RTK Query), React Redux
+
+## Верстка:
+SCSS (Sass), BEM, адаптивная (target - 320, 768, 1024), кроссбраузерная (Safari, Chrome, Edge, Firefox, Opera, Yandex)
+
+## Рутинг:
+React Router
+
+## Авторизация:
+Firebase
+
+## Тесты:
+Jest
+
+## Доп. библиотеки:
+react-flip-toolkit (анимация), query-string, debounce из lodash
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
